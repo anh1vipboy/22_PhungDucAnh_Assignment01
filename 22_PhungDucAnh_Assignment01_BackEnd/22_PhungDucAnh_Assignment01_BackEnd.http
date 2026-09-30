@@ -1,0 +1,6 @@
+@_22_PhungDucAnh_Assignment01_BackEnd_HostAddress = http://localhost:5107
+
+GET {{_22_PhungDucAnh_Assignment01_BackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

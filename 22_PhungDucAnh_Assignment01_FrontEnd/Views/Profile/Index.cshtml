@@ -1,0 +1,48 @@
+﻿@model _22_PhungDucAnh_Assignment01_FrontEnd.Models.AccountViewModel
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow-sm border-0">
+            <div class="text-center mb-4">
+                <div class="bg-primary text-white d-inline-flex p-3 rounded-circle mb-3">
+                    <i class="bi bi-person-circle fs-2"></i>
+                </div>
+                <h3 class="fw-bold">My Profile</h3>
+                <p class="text-muted">View and update your staff profile information</p>
+            </div>
+
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="AccountId" />
+                <input type="hidden" asp-for="AccountRole" />
+                
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Account ID</label>
+                    <input class="form-control bg-light" value="@Model.AccountId" readonly />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Role</label>
+                    <input class="form-control bg-light" value="@Model.RoleName" readonly />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name *</label>
+                    <input asp-for="AccountName" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address *</label>
+                    <input asp-for="AccountEmail" type="email" class="form-control" required />
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">New Password (leave blank to keep current)</label>
+                    <input asp-for="AccountPassword" type="password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                    <i class="bi bi-save me-1"></i> Save Changes
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

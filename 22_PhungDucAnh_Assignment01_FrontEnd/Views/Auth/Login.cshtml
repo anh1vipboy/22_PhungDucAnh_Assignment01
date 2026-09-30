@@ -1,0 +1,49 @@
+﻿@model _22_PhungDucAnh_Assignment01_FrontEnd.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card p-4 shadow-sm border-0">
+            <div class="text-center mb-4">
+                <div class="bg-primary text-white d-inline-flex p-3 rounded-circle mb-3">
+                    <i class="bi bi-shield-lock-fill fs-2"></i>
+                </div>
+                <h3 class="fw-bold">Sign In</h3>
+                <p class="text-muted">Enter credentials to access administrative and staff tools</p>
+            </div>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger py-2">
+                    <i class="bi bi-exclamation-circle me-1"></i> @ViewBag.Error
+                </div>
+            }
+
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address</label>
+                    <input asp-for="Email" class="form-control" placeholder="name@FUNewsManagement.org" required />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+                </button>
+            </form>
+
+            <div class="mt-4 pt-3 border-top text-center text-muted small">
+                <p class="mb-1"><strong>Default Accounts to Test:</strong></p>
+                <div class="bg-light p-2 rounded text-start">
+                    <div>ðŸ‘‘ <strong>Admin:</strong> <code>admin@FUNewsManagementSystem.org</code> / <code>@@abc123@@</code></div>
+                    <div>âœï¸ <strong>Staff:</strong> <code>IsabellaDavid@FUNewsManagement.org</code> / <code>@@1</code></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
