@@ -156,16 +156,3 @@ Mở trình duyệt truy cập:
 
 - `POST /api/auth/login`: Xác thực người dùng (hỗ trợ cả Admin cấu hình file và Tài khoản DB).
 - `GET /api/reports/statistics?startDate=...&endDate=...`: Thống kê tin tức theo khoảng thời gian.
-
----
-
-## 📦 8. HƯỚNG DẪN NỘP BÀI GITHUB
-
-Dự án đã được khởi tạo sẵn Git cục bộ. Để đẩy lên GitHub của bạn:
-
-```powershell
-cd D:\PRN232\22_PhungDucAnh_Assignment01
-git remote add origin <URL_REPO_GITHUB_CUA_BAN>
-git branch -M main
-git push -u origin main
-```
